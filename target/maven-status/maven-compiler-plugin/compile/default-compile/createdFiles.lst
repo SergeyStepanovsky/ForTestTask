@@ -1,0 +1,17 @@
+com\example\webzaim\model\VerifiedName.class
+com\example\webzaim\configuration\JacksonConfig.class
+com\example\webzaim\repository\RequestContentRepository.class
+com\example\webzaim\repository\LoanRequestRepository.class
+com\example\webzaim\model\RegPerson.class
+com\example\webzaim\model\RequestContent.class
+com\example\webzaim\model\CreditBureau.class
+com\example\webzaim\model\AccountInfo.class
+com\example\webzaim\model\LoanRequest.class
+com\example\webzaim\repository\SettingsRepository.class
+com\example\webzaim\MyApplication.class
+com\example\webzaim\service\DataProcessingService.class
+com\example\webzaim\repository\RegPersonRepository.class
+com\example\webzaim\repository\VerifiedNameRepository.class
+com\example\webzaim\model\Setting.class
+com\example\webzaim\repository\AccountInfoRepository.class
+com\example\webzaim\repository\CreditBureauRepository.class
