@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15  # Образ PostgreSQL
+    container_name: db_container  # Имя контейнера для базы данных
+    environment:
+      POSTGRES_DB: databasefortesttask   # Имя базы данных
+      POSTGRES_USER: userfortesttask    # Имя пользователя базы данных
+      POSTGRES_PASSWORD: 0000  # Пароль пользователя
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Хранение данных базы данных
+    ports:
+      - "5432:5432"  # Открываем порт для базы данных
+
+  app:
+    build: .  # Собираем приложение из текущей директории (где лежит Dockerfile)
+    container_name: yourapp_service  # Имя контейнера для приложения
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/databasefortesttask  # URL для подключения к базе данных
+      SPRING_DATASOURCE_USERNAME: userfortesttask  # Имя пользователя базы данных
+      SPRING_DATASOURCE_PASSWORD: 0000  # Пароль базы данных
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update  # Обновляем схему базы данных при необходимости
+    ports:
+      - "8080:8080"  # Открываем порт для приложения
+    depends_on:
+      - db  # Зависимость от базы данных, чтобы сначала запускалась база данных
+
+volumes:
+  db_data:  # Хранилище для данных PostgreSQL

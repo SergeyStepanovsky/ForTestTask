@@ -1,0 +1,13 @@
+# Maven
+target/
+*.log
+
+# Docker
+*.env
+docker-compose.override.yml
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
